@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is a js testing page</title>
+  </head>
+  <body>
+    <button onclick="sortArray()">Click Me</button>
+    <div id="root"></div>
+    <script>
+      function sortArray(A) {
+        var A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16];
+        var arrayLength = A.length;
+        var maxIndex = arrayLength - 1;
+        var B = A.sort(function(a, b) {
+          return a - b;
+        });
+        if (B[maxIndex] < 0) {
+          console.log(1);
+          return 1;
+        } else {
+          var i = 0;
+          while (B[i + 1] - B[i] < 2) {
+            //console.log(B[i]);
+            i++;
+          }
+
+          console.log(B[i] + 1);
+          return B[i] + 1;
+        }
+      }
+    </script>
+  </body>
+</html>
