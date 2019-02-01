@@ -8,24 +8,25 @@
     <div id="root"></div>
     <script>
       function sortArray(A) {
-        var A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16];
+        var A = [7, 3, 6, 4, 7, 9, 10, 11, 12, 2, 9, 5];
+
         var arrayLength = A.length;
         var maxIndex = arrayLength - 1;
         var B = A.sort(function(a, b) {
           return a - b;
         });
-        if (B[maxIndex] < 0) {
+        var highestNumber = B[maxIndex];
+        //console.log(highestNumber);
+        if (highestNumber < 1) {
           console.log(1);
           return 1;
         } else {
-          var i = 0;
-          while (B[i + 1] - B[i] < 2) {
-            //console.log(B[i]);
-            i++;
+          for (var i = 0; i < arrayLength; i++) {
+            if (B[i + 1] - B[i] === 2) {
+              console.log(B[i] + 1);
+              //console.log(B[i + 1]);
+            }
           }
-
-          console.log(B[i] + 1);
-          return B[i] + 1;
         }
       }
     </script>
